@@ -1,14 +1,15 @@
 <header>
   <h1>投稿一覧</h1>
 </header>
-<table>
-  <tr>
+<table class="container">
+  <tr class="row">
     <th>内容</th>
-    <th>投稿者</th>
+    <th>作成者</th>
   </tr>
   <% @blog.each do |blog| %>
-  <tr>
+  <tr class="row">
     <td><%= blog.name %></td>
+    <td><%= blog.user.name %></td>
     <td><%= link_to '詳細を確認する', blog_path(blog) %></td>
     <td><%= link_to "つぶやきを編集する", edit_blog_path(blog) %></td>
     <td><%= link_to 'つぶやきを削除する', blog_path(blog), method: :delete %></td>
@@ -16,7 +17,3 @@
   <% end %>
 </table>
 <%= link_to '新しく投稿する', new_blog_path %>
-
-<footer>
-  <h1>(株)顔本</h1>
-</footer>

@@ -29,6 +29,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.create(blog_params)
+    @blog = current_user.blogs.build(blog_params)
     if @blog.save
       redirect_to new_blog_path
     else
