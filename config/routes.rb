@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :feeds do
     collection do
       post :confirm
+  root 'sessions#new'    
     end
   end
 end
